@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>READ ME</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .read-me-dropdown-container {
+    position: center;
+    bottom: 20px;
+    right: 20px;
+    overflow: hidden;
+  }
+  .read-me-dropdown {
+    position: relative;
+    background-color: #0b0861;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  .read-me-dropdown:hover {
+    background-color: #058acd;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  .show {
+    display: block;
+  }
+</style>
+</head>
+<body>
+    <p> HEY! I'm so proud of how you've been coping up lately, and how far you've made to be here.</p>
+    <p> I've been so busy kaya madalas hindi ko na nache-check kung kumusta ka na, hindi ko na rin nahihintay kung nakauwi ka na.</p>
+    <p> To keep up, please read my message base on your mood!</p>
+
+<div class="read-me-dropdown-container">
+  <div class="read-me-dropdown" onclick="toggleDropdown()">READ ME</div>
+  <div class="dropdown-content" id="dropdownContent">
+    <a href="other_page1.html">If you're sad</a>
+    <a href="other_page2.html">If you're overwhelmed</a>
+    <a href="other_page3.html">If you're angry</a>
+    <a href="other_page4.html">If you're in love</a>
+    <a href="other_page5.html">If you're broken</a>
+    <a href="other_page6.html">If you're disappointed</a>
+    <a href="other_page7.html">If you're ashame</a>
+    <a href="other_page8.html">If you're bored</a>
+    <a href="other_page9.html">If you miss someone</a>
+    <a href="other_page10.html">JUST BECAUSE</a>
+  </div>
+</div>
+
+<script>
+  function toggleDropdown() {
+    var dropdownContent = document.getElementById("dropdownContent");
+    dropdownContent.classList.toggle("show");
+  }
+
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.read-me-dropdown')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      for (var i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
